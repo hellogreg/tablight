@@ -2,8 +2,11 @@
 
   "use strict";
 
-  // TODO: Instead of having a separate CSS file, create the CSS styles in this JS file
-  //
+  // TODO: Instead of having a separate CSS file, create and apply the CSS styles in this JS file
+  // Resources...
+  // http://davidwalsh.name/add-rules-stylesheets
+  // http://stackoverflow.com/questions/15505225/inject-css-stylesheet-as-string-using-javascript
+  // http://stackoverflow.com/questions/1720320/how-to-dynamically-create-css-class-in-javascript-and-apply
 
   function tablight() {
 
