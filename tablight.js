@@ -21,6 +21,7 @@
       }
     }
 
+    // Deselct all tab buttons. Done whenever a button is clicked, before selecting the new one.
     function deselectAllTabButtons() {
       var i = 0, len = $allTabButtons.length;
       for (; i < len; i++) {
@@ -29,7 +30,7 @@
     }
 
 
-    // On load, show the first tab on the page, hide the others, and start tab button event listener.
+    // Self-executing init. Show the first tab on the page, hide the others, and start tab button event listener.
     (function () {
       var tabButtonLen = $allTabButtons.length;
       var showFirstTab = true;
@@ -62,7 +63,7 @@
 
   }
 
-  // Quick DOM readiness check to initialize Tablight.
+  // Quickie DOM readiness check to initialize Tablight.
   if (!!(window.addEventListener)) {
     window.addEventListener("DOMContentLoaded", tablight);
   } else {
