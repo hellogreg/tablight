@@ -13,8 +13,8 @@
     // Document elements and element arrays, prefixed with $.
     // (We're not using jQuery, but the $ style is familiar.)
     var $main = document.querySelector("main");
-    var $navTabs = document.getElementsByClassName("tab-nav")[0];
-    var $allTabButtons = $navTabs.getElementsByClassName("tab-button");
+    var $tabNav = document.getElementsByClassName("tab-nav")[0];
+    var $allTabButtons = $tabNav.getElementsByClassName("tab-button");
     var $allTabs = $main.getElementsByClassName("tab");
 
 
@@ -48,7 +48,7 @@
         // If there are multiple tabs, start event listener for all tab display buttons.
         if (tabButtonLen > 1) {
 
-          $navTabs.addEventListener("click", function (e) {
+          $tabNav.addEventListener("click", function (e) {
 
             var $target = e.target || e.srcElement;
             var activeTabName = $target.getAttribute("data-section");
