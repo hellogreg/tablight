@@ -68,7 +68,7 @@
 
   }
 
-  // Quickie DOM readiness check to initialize Tablight.
+  // Quickie DOM readiness check to initialize widget.
   if (!!(window.addEventListener)) {
     window.addEventListener("DOMContentLoaded", tablight);
   } else {
