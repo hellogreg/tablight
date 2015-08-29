@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>tablight demo</title>
+</head>
+<body>
+
+<header>
+<h1>Tablight</h1>
+<p>Tablight is a tiny, responsive, progressively-enhanced top tabs widget for displaying content panels. I made it because I needed a replacement for YUI's tabview widget.</p>
+</header>
+
+<main>
+
+  <!-- INTRA-PAGE NAVIGATION -->
+  <!-- Todo: Add anchor links (removed with JS), so non-JS users can nav tabs intra-page. -->
+  <nav id="nav-tabs">
+    <ul>
+      <li><a data-section="section-first" href="#first" class="tab-button">First Section</a></li>
+      <li><a data-section="section-second" href="#second" class="tab-button">Second Section</a></li>
+      <li><a data-section="section-third" href="#third" class="tab-button">Third Section</a></li>
+    </ul>
+  </nav>
+
+  <section class="tab" id="section-first">
+    <a name="first"></a>
+    <h2>This is the first section.</h2>
+  </section>
+
+  <section class="tab" id="section-second">
+    <a name="second"></a>
+    <h2>This is the second section.</h2>
+  </section>
+
+  <section class="tab" id="section-third">
+    <a name="third"></a>
+    <h2>This is the third section.</h2>
+  </section>
+
+</main>
+
+</body>
+</html>
