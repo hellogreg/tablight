@@ -2,7 +2,7 @@
 
   "use strict";
 
-  // TODO: Instead of having a separate CSS file, create and apply the CSS styles in this JS file
+  // TODO: Instead of having a separate CSS file, inject and apply the required CSS styles with this JS file
   // Resources...
   // http://davidwalsh.name/add-rules-stylesheets
   // http://stackoverflow.com/questions/15505225/inject-css-stylesheet-as-string-using-javascript
