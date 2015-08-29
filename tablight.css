@@ -1,3 +1,6 @@
+/********************************************/
+/* BEGIN OPTIONAL CONTENT JUST FOR THE DEMO */
+
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -8,7 +11,6 @@
   background: #fff;
   margin: 0 auto;
   max-width: 62rem;
-  overflow: auto;
 }
 
 .page > header, .page > footer, main {
@@ -24,10 +26,13 @@ main {
   padding: 0 1rem;
 }
 
+/* END OPTIONAL CONTENT */
+/************************/
 
-/**
-  * Screen-size specific styles
-***/
+
+/* CUSTOMIZE BELOW CONTENT TO STYLE HOWEVER YOU LIKE */
+
+/* Larger (desktop and tablet) screen sizes here... */
 @media screen and (min-width: 601px) {
 
   main {
@@ -39,9 +44,9 @@ main {
   }
 
   .tab-nav {
+    border-bottom: 1px solid #ddd;
     font-family: sans-serif;
     font-size: .625rem;
-    font-weight: 500;
     line-height: 1.25rem;
     text-transform: uppercase;
   }
@@ -76,21 +81,12 @@ main {
   }
 
   .tab {
-    background: #ddd;
     padding: 1rem;
   }
 
 }
 
+/* Smaller screen sizes here... */
 @media screen and (max-width: 600px) {
-  .page {
-    height: 100vh;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  #nav-tabs ul li {
-    background: #e9ecf3;
-  }
 
 }
