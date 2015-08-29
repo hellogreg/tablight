@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page {
+  background: #fff;
+  margin: 0 auto;
+  max-width: 62rem;
+  overflow: auto;
+}
+
+.page > header, .page > footer, main {
+  float: left;
+  width: 100%;
+}
+
+.page > header, .page > footer {
+  padding: 1rem;
+}
+
+main, #nav-site {
+  padding: 0 1rem;
+}
+
+
+/**
+  * Screen-size specific styles
+***/
+@media screen and (min-width: 601px) {
+
+  main {
+    width: 100%;
+  }
+
+  .invisible {
+    display: none;
+  }
+
+  .tab-nav {
+    font-family: sans-serif;
+    font-size: .625rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .tab-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tab-nav ul li {
+    display: inline;
+    margin-right: .25rem;
+  }
+
+  .tab-nav .tab-button {
+    background: #eee;
+    border-radius: .25rem .25rem 0 0;
+    color: #555;
+    padding: .25rem .375rem;
+    text-decoration: none;
+  }
+
+  .tab-nav .tab-button.selected {
+    background: #ddd;
+    color: #444;
+  }
+
+  .tab-nav .tab-button:hover {
+    background: #ccc;
+    color: #333;
+  }
+
+  .tab {
+    background: #ddd;
+    padding: 1rem;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .page {
+    height: 100vh;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #nav-tabs ul li {
+    background: #e9ecf3;
+  }
+
+}
