@@ -34,6 +34,21 @@
       }
     }
 
+    function initTabListener() {
+      $tabNav.addEventListener("click", function (e) {
+
+        var $target = e.target || e.srcElement;
+        var activeTabName = $target.getAttribute("data-section");
+        e.preventDefault();
+
+        if (activeTabName) {
+          hideTabs();
+          deselectAllTabButtons();
+          document.getElementById(activeTabName).classList.remove("invisible");
+          $target.classList.add("selected");
+        }
+      }, false);
+    }
 
     // Self-executing init. Show the first tab on the page, hide the others, and start tab button event listener.
     (function () {
@@ -44,25 +59,10 @@
         $allTabButtons[0].classList.add("selected");
         hideTabs(showFirstTab);
 
-        // If there are multiple tabs, start event listener for all tab display buttons.
+        // If there are multiple tabs, start event listener.
         if (tabButtonLen > 1) {
-
-          $tabNav.addEventListener("click", function (e) {
-
-            var $target = e.target || e.srcElement;
-            var activeTabName = $target.getAttribute("data-section");
-            e.preventDefault();
-
-            if (activeTabName) {
-              hideTabs();
-              deselectAllTabButtons();
-              document.getElementById(activeTabName).classList.remove("invisible");
-              $target.classList.add("selected");
-            }
-          }, false);
-
+          initTabListener();
         }
-
       }
     }());
 
