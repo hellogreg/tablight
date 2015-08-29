@@ -2,6 +2,9 @@
 
   "use strict";
 
+  // TODO: Instead of having a separate CSS file, create the CSS styles in this JS file
+  //
+
   function tablight() {
 
     // Document elements and element arrays, prefixed with $.
