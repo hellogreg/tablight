@@ -12,10 +12,9 @@
 
     // Document elements and element arrays, prefixed with $.
     // (We're not using jQuery, but the $ style is familiar.)
-    var $main = document.querySelector("main");
     var $tabNav = document.getElementsByClassName("tab-nav")[0];
     var $allTabButtons = $tabNav.getElementsByClassName("tab-button");
-    var $allTabs = $main.getElementsByClassName("tab");
+    var $allTabs = document.getElementsByClassName("tab");
 
 
     // Hide all tabs, unless a param is sent to ignore the first one (e.g., on page load).
