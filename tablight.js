@@ -43,6 +43,8 @@
         var $target = e.target || e.srcElement;
         var activeTabName = $target.getAttribute("data-section");
 
+        console.log(window.innerWidth);
+
         // Only act if a valid tab button was clicked and we're in a browser window wide enough to use tabs.
         // We check the latter every time, in case the window width has changed since loading.
         if (activeTabName && (window.innerWidth > maxMobileWidth)) {
