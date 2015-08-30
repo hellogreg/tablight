@@ -2,9 +2,6 @@
 
   "use strict";
 
-  // TODO: Disable JS if screen is too small. We don't want to preventDefault() then.
-  // Kind of included now, but may want to add a browser resize listener.
-
   // TODO: Instead of having a separate CSS file, inject and apply the required CSS styles with this JS file
   // Resources...
   // http://davidwalsh.name/add-rules-stylesheets
@@ -18,6 +15,9 @@
     var $tabNav = document.getElementsByClassName("tab-nav")[0];
     var $allTabButtons = $tabNav.getElementsByClassName("tab-button");
     var $allTabs = document.getElementsByClassName("tab");
+
+    // Max # of pixels for what we consider a non-desktop, non-tablet mobile device.
+    var maxMobileWidth = 600;
 
 
     // Hide all tabs, unless a param is sent to ignore the first one (e.g., on page load).
@@ -44,7 +44,9 @@
         var activeTabName = $target.getAttribute("data-section");
         e.preventDefault();
 
-        if (activeTabName) {
+        // Only act if a valid tab button was clicked and we're in a browser window wide enough to use tabs.
+        // We check the latter every time, in case the window width has changed since loading.
+        if (activeTabName && (window.innerWidth > maxMobileWidth)) {
           hideTabs();
           deselectAllTabButtons();
           document.getElementById(activeTabName).classList.remove("invisible");
@@ -55,18 +57,16 @@
 
     // Self-executing init. Show the first tab on the page, hide the others, and start tab button event listener.
     (function () {
-      if (window.innerWidth > 600) {
-        var tabButtonLen = $allTabButtons.length;
-        var showFirstTab = true;
-        if (tabButtonLen > 0) {
+      var tabButtonLen = $allTabButtons.length;
+      var showFirstTab = true;
+      if (tabButtonLen > 0) {
 
-          $allTabButtons[0].classList.add("selected");
-          hideTabs(showFirstTab);
+        $allTabButtons[0].classList.add("selected");
+        hideTabs(showFirstTab);
 
-          // If there are multiple tabs, start event listener.
-          if (tabButtonLen > 1) {
-            initTabListener();
-          }
+        // If there are multiple tabs, start event listener.
+        if (tabButtonLen > 1) {
+          initTabListener();
         }
       }
     }());
