@@ -30,6 +30,7 @@ body {
 
 main {
   padding: 0 1rem;
+  width: 100%;
 }
 
 /* END OPTIONAL CONTENT */
@@ -39,29 +40,26 @@ main {
 /*****************************************************/
 /* CUSTOMIZE BELOW CONTENT TO STYLE HOWEVER YOU LIKE */
 
+/*********************************************************/
+/* UNCOMMENT IF NOT USING INJECTED STYLES IN tablight.js */
+/*********************************************************/
+
 /* Larger (desktop and tablet) screen sizes here... */
+/*
 @media screen and (min-width: 601px) {
 
-  main {
-    width: 100%;
-  }
-
-  .invisible {
+  .hidden-tab {
     display: none;
   }
 
-  .tab-nav {
+  .tab-nav ul {
     border-bottom: 1px solid #ddd;
     font-family: sans-serif;
     font-size: .625rem;
     line-height: 1.25rem;
-    text-transform: uppercase;
-  }
-
-  .tab-nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    text-transform: uppercase;
   }
 
   .tab-nav ul li {
@@ -75,6 +73,12 @@ main {
     color: #555;
     padding: .25rem .375rem;
     text-decoration: none;
+  }
+
+  @-moz-document url-prefix() {
+    .tab-nav .tab-button {
+      padding: .3rem .375rem;
+    }
   }
 
   .tab-nav .tab-button.selected {
@@ -93,6 +97,7 @@ main {
   }
 
 }
+*/
 
 /* Smaller screen sizes here... */
 @media screen and (max-width: 600px) {
