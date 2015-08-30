@@ -2,6 +2,9 @@
 
   "use strict";
 
+  // TODO: Disable JS if screen is too small. We don't want to preventDefault() then.
+  // Kind of included now, but may want to add a browser resize listener.
+
   // TODO: Instead of having a separate CSS file, inject and apply the required CSS styles with this JS file
   // Resources...
   // http://davidwalsh.name/add-rules-stylesheets
@@ -52,16 +55,18 @@
 
     // Self-executing init. Show the first tab on the page, hide the others, and start tab button event listener.
     (function () {
-      var tabButtonLen = $allTabButtons.length;
-      var showFirstTab = true;
-      if (tabButtonLen > 0) {
+      if (window.innerWidth > 600) {
+        var tabButtonLen = $allTabButtons.length;
+        var showFirstTab = true;
+        if (tabButtonLen > 0) {
 
-        $allTabButtons[0].classList.add("selected");
-        hideTabs(showFirstTab);
+          $allTabButtons[0].classList.add("selected");
+          hideTabs(showFirstTab);
 
-        // If there are multiple tabs, start event listener.
-        if (tabButtonLen > 1) {
-          initTabListener();
+          // If there are multiple tabs, start event listener.
+          if (tabButtonLen > 1) {
+            initTabListener();
+          }
         }
       }
     }());
