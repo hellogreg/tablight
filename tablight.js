@@ -13,6 +13,7 @@
     // Max # of pixels for what we consider a non-desktop, non-tablet mobile device.
     var maxMobileWidth = 600;
 
+
     // Instead of having a separate CSS file, inject and apply the required CSS styles with this JS file
     // I'd still use the CSS file for myself, but for public use, might be better if all were in one file.
     // If you'd rather use tablight.css, don't call this function and uncomment the CSS in that file.
@@ -20,8 +21,7 @@
     // Resources...
     // http://davidwalsh.name/add-rules-stylesheets
     // http://yuiblog.com/blog/2007/06/07/style/
-    // http://stackoverflow.com/questions/15505225/inject-css-stylesheet-as-string-using-javascript
-    // http://stackoverflow.com/questions/1720320/how-to-dynamically-create-css-class-in-javascript-and-apply
+    //
     function injectDocumentStyles () {
       var styleElement = document.createElement("style");
       styleElement.type = "text/css";
@@ -47,6 +47,7 @@
       document.head.appendChild(styleElement);
     }
 
+
     // Hide all tabs, unless a param is sent to ignore the first one (e.g., on page load).
     function hideTabs(showFirstTab) {
       var i = showFirstTab ? 1 : 0;
@@ -56,6 +57,7 @@
       }
     }
 
+
     // Deselct all tab buttons. Done whenever a button is clicked, before selecting the new one.
     function deselectAllTabButtons() {
       var i = 0, len = $allTabButtons.length;
@@ -64,7 +66,8 @@
       }
     }
 
-    function initTabListener() {
+
+    function startTabListener() {
       $tabNav.addEventListener("click", function (e) {
 
         var $target = e.target || e.srcElement;
@@ -84,6 +87,7 @@
       }, false);
     }
 
+
     // Self-executing init. Show the first tab on the page, hide the others, and start tab button event listener.
     (function () {
       var tabButtonLen = $allTabButtons.length;
@@ -96,7 +100,7 @@
 
         // If there are multiple tabs, start event listener.
         if (tabButtonLen > 1) {
-          initTabListener();
+          startTabListener();
         }
       }
     }());

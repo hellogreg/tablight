@@ -75,6 +75,7 @@ main {
     text-decoration: none;
   }
 
+*//* Fix for Mozilla's single-pixel, line-height rendering quirk. *//*
   @-moz-document url-prefix() {
     .tab-nav .tab-button {
       padding: .3rem .375rem;
