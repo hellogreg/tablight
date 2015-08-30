@@ -19,7 +19,6 @@
     // Max # of pixels for what we consider a non-desktop, non-tablet mobile device.
     var maxMobileWidth = 600;
 
-
     // Hide all tabs, unless a param is sent to ignore the first one (e.g., on page load).
     function hideTabs(showFirstTab) {
       var i = showFirstTab ? 1 : 0;
@@ -41,17 +40,17 @@
       $tabNav.addEventListener("click", function (e) {
 
         var $target = e.target || e.srcElement;
-        var activeTabName = $target.getAttribute("data-section");
-
-        console.log(window.innerWidth);
+        var targetTabAnchorName = $target.getAttribute("href").slice(1);
+        var $targetTab = document.getElementsByName(targetTabAnchorName)[0].parentElement;
+        console.log($targetTab);
 
         // Only act if a valid tab button was clicked and we're in a browser window wide enough to use tabs.
         // We check the latter every time, in case the window width has changed since loading.
-        if (activeTabName && (window.innerWidth > maxMobileWidth)) {
+        if ($targetTab && (window.innerWidth > maxMobileWidth)) {
           e.preventDefault();
           hideTabs();
           deselectAllTabButtons();
-          document.getElementById(activeTabName).classList.remove("invisible");
+          $targetTab.classList.remove("invisible");
           $target.classList.add("selected");
         }
       }, false);
