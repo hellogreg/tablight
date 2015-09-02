@@ -1,5 +1,5 @@
 # Tablight
-Tablight is a tiny, responsive, progressively-enhanced top tabs widget for displaying content panels. 
+Tablight is a tiny, responsive, accessible, progressively-enhanced top tabs widget for displaying content panels. 
 
 I made it because I needed a replacement for YUI's Tabview. I used YUI in an old version of our website at my job, but I'm going without third-party frameworks this time around.
 
